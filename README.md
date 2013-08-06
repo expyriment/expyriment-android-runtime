@@ -11,6 +11,6 @@ Building the Android app
 * Copy all files in this repository into a folder called 'expyriment_app', inside the PGS4A folder
 * Copy the (released!) Expyriment source code (the 'expyriment' folder) into the 'expyriment_app' folder
 * Run
-    ./android.py configure expyriment
+    ./android.py configure expyriment_app
 * Run
-    ./android.py build expyriment release
+    ./android.py build expyriment_app release
