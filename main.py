@@ -2,13 +2,11 @@ import os
 import glob
 
 import expyriment
+import android
 
-try:
-    import android
-    android.init()
-except:
-    android = None
 
+android.init()
+android.map_key(android.KEYCODE_BACK, pygame.K_ESCAPE)
 
 def main():
     projects = {}
