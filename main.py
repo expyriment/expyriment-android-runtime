@@ -1,14 +1,15 @@
+import sys
 import os
 import glob
 
+import pygame
 import expyriment
 import android
 
 
-android.init()
-android.map_key(android.KEYCODE_BACK, pygame.K_ESCAPE)
-
 def main():
+    android.init()
+    
     projects = {}
     for folder in glob.glob("/mnt/*"):
         if os.path.isdir(folder):
@@ -44,9 +45,9 @@ def main():
     aliases = (
         ('monospace', 'misc-fixed', 'courier', 'couriernew', 'console',
          'fixed', 'mono', 'freemono', 'bitstreamverasansmono',
-         'verasansmono', 'monotype', 'lucidaconsole', 'droidsansmono),
+         'verasansmono', 'monotype', 'lucidaconsole', 'droidsansmono'),
         ('sans', 'arial', 'helvetica', 'swiss', 'freesans',
-         'bitstreamverasans', 'verasans', 'verdana', 'tahoma', 'droidsans),
+         'bitstreamverasans', 'verasans', 'verdana', 'tahoma', 'droidsans'),
         ('serif', 'times', 'freeserif', 'bitstreamveraserif', 'roman',
          'timesroman', 'timesnewroman', 'dutch', 'veraserif',
          'georgia', 'droidserif'),
@@ -82,8 +83,10 @@ def main():
                                       scroll_menu=5, mouse=mouse)
         py_file = projects[menu.get()]
         expyriment.control.defaults.event_logging = 1
+        expyriment.control.defaults.initialize_delay = 0
         os.chdir(os.path.split(py_file)[0])
-        execfile("{0}".format(py_file))
+        sys.argv[0] = py_file
+        execfile("{0}".format(py_file), globals())
 
 
 if __name__ == "__main__":
