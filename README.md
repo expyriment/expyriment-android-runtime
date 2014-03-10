@@ -1,7 +1,7 @@
-expyriment-android-runtime
+Expyriment Runtime for Android (ERA)
 ==========================
 
-Main repository of **Expyriment** Android Runtime
+Main repository of **Expyriment** Runtime for Android
 
 *GNU General Public License v3*  
 Florian Krause (florian@expyriment.org) & Oliver Lindemann (oliver@expyriment.org)
