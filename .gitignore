@@ -39,4 +39,6 @@ nosetests.xml
 .pydevproject
 
 #### Expyriment specific
-expyriment
+examples/data/
+examples/events/
+_build/
