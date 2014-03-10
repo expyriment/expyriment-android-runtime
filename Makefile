@@ -1,19 +1,21 @@
+PGS4A=pgs4a-0.9.4
+
 .PHONY: build
 
 all: build 
 
-build: build/pgs4a-0.9.4.tar.bz2 build/expyriment
-	@rm -rf build/pgs4a
-	@tar xjf build/pgs4a-0.9.4.tar.bz2; mv pgs4a-0.9.4 build/pgs4a;
-	@cp -ra expyriment_app build/pgs4a
-	@cp -ra build/expyriment build/pgs4a/expyriment_app
-	@cd build/pgs4a;\
+build: build/$(PGS4A).tar.bz2 build/expyriment
+	@rm -rf build/$(PGS4A)
+	@tar xjf build/$(PGS4A).tar.bz2; mv $(PGS4A) build/$(PGS4A);
+	@cp -ra expyriment_app build/$(PGS4A)
+	@cp -ra build/expyriment build/$(PGS4A)/expyriment_app
+	@cd build/$(PGS4A);\
 		python android.py configure expyriment_app ;\
 		python android.py build expyriment_app release;\
 
-build/pgs4a-0.9.4.tar.bz2:
+build/pgs4a-%.tar.bz2:
 	@mkdir -p build
-	wget -P build 'http://pygame.renpy.org/dl/pgs4a-0.9.4.tar.bz2'
+	wget -P build 'http://pygame.renpy.org/dl/pgs4a-$*.tar.bz2'
 
 build/expyriment:
 	@mkdir -p build
