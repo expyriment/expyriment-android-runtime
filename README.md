@@ -1,8 +1,10 @@
 expyriment-android-runtime
 ==========================
 
-Main repository of Expyriment Android Runtime
+Main repository of **Expyriment** Android Runtime
 
+*GNU General Public License v3*  
+Florian Krause (florian@expyriment.org) & Oliver Lindemann (oliver@expyriment.org)
 
 Building the Android app
 ------------------------
@@ -14,3 +16,9 @@ Building the Android app
     ./android.py configure expyriment_app
 * Run
     ./android.py build expyriment_app release
+
+
+Expyriment 
+==========
+**Expyriment** is an open-source and platform-independent lightweight Python
+library for designing and conducting behavioral experiments: http://www.expyriment.org
