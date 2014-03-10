@@ -36,7 +36,7 @@ for mapping in [L4B, L4G]:
             t = design.Trial()
             t.set_factor("Position", position)
             t.set_factor("Colour", colour)
-            b.add_trial(t, copies=20)
+            b.add_trial(t, copies=24)
     b.shuffle_trials()
     exp.add_block(b)
 exp.add_bws_factor("OrderOfMapping", [1, 2])
