@@ -3,8 +3,7 @@ Expyriment Runtime for Android (ERA)
 
 **Expyriment** Runtime for Android
 
-*GNU General Public License v3*
-
+*GNU General Public License v3* 
 Florian Krause (florian@expyriment.org) & Oliver Lindemann (oliver@expyriment.org)
 
 Building the Android app
