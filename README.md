@@ -5,9 +5,13 @@ Expyriment Android Runtime
 
 Florian Krause (florian@expyriment.org) & Oliver Lindemann (oliver@expyriment.org)
 
+About
+-----
+The Expyriment Android Runtime is a convinient way to run experiments created with [Expyriment] (http://www.expyriment.org) on an Android device.
+
+
 Installation
 ------------
-
 The easiest way is to install the Expyriment Android Runtime on you Android device is to download and install the latest release of our [Android application package] (https://github.com/expyriment/expyriment-android-runtime/releases).
 
 Altenatively, you can build the Expyriment Android Runtime yourself as describe below:
@@ -21,6 +25,19 @@ Altenatively, you can build the Expyriment Android Runtime yourself as describe 
 * Run `./android.py configure expyriment_app`
 * Run `./android.py build expyriment_app release`
 * The resulting apk file will be available in the bin/ directory
+
+Usage
+-----
+Once installed, the application will look for Expyriment scripts (each in its own subdirectory) in a directory called ‘expyriment’, located at the root level of either storage device under ‘mnt’ (i.e. the internal or external SD card). Examples of correctly located Expyriment scripts include:
+```
+/mnt/sdcard0/expyriment/exp1/exp1.py
+
+/mnt/sdcard0/expyriment/exp2/exp2.py
+
+/mnt/extSdCard/expyriment/exp3/exp3.py
+
+/mnt/extSdCard/expyriment/exp4/exp4.py
+```
 
 Note 
 ----
