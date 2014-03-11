@@ -6,10 +6,7 @@ import pygame
 import expyriment
 import android
 
-
-def main():
-    android.init()
-    
+def old_method():
     projects = {}
     for folder in glob.glob("/mnt/*"):
         if os.path.isdir(folder):
@@ -20,6 +17,48 @@ def main():
                     path = folder + "expyriment/*.py"
                 for pyfile in glob.glob(path):
                     projects[os.path.split(pyfile)[-1]] = pyfile
+    return projetcs
+
+def find_tagged_files(folder):
+    """find all tagged file.
+
+    Returns dict of files
+    """
+
+    keywords = ["expyriment", "start(", "initialize("]
+    rtn = {}
+    for entry in glob.glob(folder+"/*"):
+        if os.path.isdir(entry):
+            rtn.update(find_tagged_files(entry))
+        elif entry.endswith(".py") and not \
+                                os.path.split(entry)[1].startswith("_"):
+            try:
+                with open(entry) as fl:
+                    lines = fl.readlines()
+            except:
+                lines = ""
+            cnt = 0
+            for key in keywords:
+                if check_keyword(lines, key):
+                    cnt += 1
+            if cnt==len(keywords):
+                rtn[os.path.split(entry)[-1]] = entry
+    return rtn
+
+def check_keyword(lines, keyword):
+    for l in lines:
+        if l.find(keyword)>=0:
+            return True
+    return False
+
+def main():
+    android.init()
+
+    #projects = old_method()
+    projects = find_tagged_files("/mnt/sdcard0/expyriment") # TODO not yet checked on Android
+    projects.update(find_tagged_files("/mnt/sdcard0/expyriment"))
+    projects.update(find_tagged_files("/mnt/extSdCard/expyriment"))
+    projects.update(find_tagged_files("/mnt/extSdCard/expyriment")) 
 
     pygame.font.init()
     for font in glob.glob("/system/fonts/*"):
