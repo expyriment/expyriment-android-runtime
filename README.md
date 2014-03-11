@@ -8,7 +8,7 @@ Florian Krause (florian@expyriment.org) & Oliver Lindemann (oliver@expyriment.or
 Installation
 ------------
 
-The easiest way is to install the Expyriment Android Runtime on you Android device is to download and install [the latest release of our APK] (https://github.com/expyriment/expyriment-android-runtime/releases/latest).
+The easiest way is to install the Expyriment Android Runtime on you Android device is to download and install the latest release of our [Android application package] (https://github.com/expyriment/expyriment-android-runtime/releases).
 
 Altenatively, you can build the Expyriment Android Runtime yourself as describe below:
 * Installed the JAVA JDK: http://www.oracle.com/technetwork/java/javase/downloads/index.html
