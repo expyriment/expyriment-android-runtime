@@ -11,7 +11,7 @@ Building the Android app
 
 Please, ensure that you have installed the Android SDK: http://developer.android.com/sdk/index.html
 
-You can build ERA by using the Makefie (`make build`) or manually as describe below:
+You can build ERA by using the Makefie (`make configure build`) or manually as describe below:
 * Download PGS4A (version 0.94) from http://pygame.renpy.org/dl
 * Copy the folder 'expyriment_app' inside the PGS4A folder
 * Download the released Expyriment source code (zip file): http://www.expyriment.org/getit
