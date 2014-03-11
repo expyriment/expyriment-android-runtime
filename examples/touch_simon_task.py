@@ -1,14 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-## TODO: requires 0.7.0+ (plus touchscreen bugfix (commit 9a15d53)
-
 """
-A simple experiment to assess a Simon effect with tabel PC or smartphone
+A experiment to assess a Simon effect with tablet PC or smartphone using
+Expyriment and Expyriment Android Runtime (EAR)
+
+
+For Simon effect see e.g.
+Simon, J. R. (1969). Reactions towards the source of stimulation. Journal of
+experimental psychology, 81, 174-176.
 
 (c) Oliver Lindemann, 2014
 
 """
+
+## TODO: requires 0.7.0+ (plus touchscreen bugfix (commit 9a15d53)
 
 from expyriment import design, control, stimuli, io, misc
 from expyriment.design.randomize import rand_int
@@ -130,7 +135,8 @@ def run_trial(trial_cnt, trial, mapping):
     correct = int(button==required_response)
     if not(correct):
         error_screen = blank.copy()
-        stimuli.TextLine(text="Incorrect response!", text_colour=misc.constants.C_RED,
+        stimuli.TextLine(text="Incorrect response!",
+                        text_colour=misc.constants.C_RED,
                         text_size=32).plot(error_screen)
         error_screen.present()
         exp.clock.wait(error_feedback_time)
@@ -153,7 +159,6 @@ for block in exp.blocks:
     # run block
     for cnt, trial in enumerate(block.trials):
         run_trial(cnt, trial, block.get_factor("Mapping"))
-
 
 ### End ###
 control.end()
