@@ -10,7 +10,7 @@ Florian Krause (florian@expyriment.org) & Oliver Lindemann (oliver@expyriment.or
 Building the Android application
 --------------------------------
 
-Please, ensure that you have installed the Android JDK: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+Please, ensure that you have installed the JAVA JDK: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 You can build the Expyriment Android Runtime as describe below:
 * Download PGS4A (version 0.94) from http://pygame.renpy.org/dl
