@@ -1,17 +1,20 @@
 PGS4A=pgs4a-0.9.4
 
-.PHONY: build
+.PHONY: build configure
 
-all: build 
+build: 
+	@cd build/$(PGS4A);\
+		python android.py build expyriment_app release;\
 
-build: build/$(PGS4A).tar.bz2 build/expyriment
+configure: build/$(PGS4A).tar.bz2 build/expyriment
 	@rm -rf build/$(PGS4A)
 	@tar xjf build/$(PGS4A).tar.bz2; mv $(PGS4A) build/$(PGS4A);
 	@cp -ra expyriment_app build/$(PGS4A)
 	@cp -ra build/expyriment build/$(PGS4A)/expyriment_app
+	@cp -ra AndroidManifest.xml build/$(PGS4A)
 	@cd build/$(PGS4A);\
 		python android.py configure expyriment_app ;\
-		python android.py build expyriment_app release;\
+
 
 build/pgs4a-%.tar.bz2:
 	@mkdir -p build
