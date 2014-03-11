@@ -7,7 +7,7 @@ Florian Krause (florian@expyriment.org) & Oliver Lindemann (oliver@expyriment.or
 
 About
 -----
-The Expyriment Android Runtime is a convinient way to run experiments created with [Expyriment] (http://www.expyriment.org) on an Android device.
+The Expyriment Android Runtime is a convinient way to run experiments created with [*Expyriment*] (http://www.expyriment.org) on an Android device. *Expyriment* is an open-source and platform-independent lightweight Python library for designing and conducting behavioral experiments: https://github.com/expyriment/expyriment
 
 
 Installation
@@ -43,7 +43,3 @@ Once installed, the application will look for Expyriment scripts (each in its ow
 /mnt/extSdCard/expyriment/exp4/exp4.py
 ```
 
-Note 
-----
-**Expyriment** is an open-source and platform-independent lightweight Python
-library for designing and conducting behavioral experiments: http://www.expyriment.org, https://github.com/expyriment/expyriment
