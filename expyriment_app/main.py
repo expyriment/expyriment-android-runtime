@@ -19,8 +19,8 @@ def old_method():
                     projects[os.path.split(pyfile)[-1]] = pyfile
     return projetcs
 
-def find_tagged_files(folder):
-    """find all tagged file.
+def find_keyword_files(folder):
+    """find all file with keywords in folder and subfolders
 
     Returns dict of files
     """
@@ -29,7 +29,7 @@ def find_tagged_files(folder):
     rtn = {}
     for entry in glob.glob(folder+"/*"):
         if os.path.isdir(entry):
-            rtn.update(find_tagged_files(entry))
+            rtn.update(find_keyword_files(entry))
         elif entry.endswith(".py") and not \
                                 os.path.split(entry)[1].startswith("_"):
             try:
@@ -55,10 +55,10 @@ def main():
     android.init()
 
     #projects = old_method()
-    projects = find_tagged_files("/mnt/sdcard0/expyriment") # TODO not yet checked on Android
-    projects.update(find_tagged_files("/mnt/sdcard0/expyriment"))
-    projects.update(find_tagged_files("/mnt/extSdCard/expyriment"))
-    projects.update(find_tagged_files("/mnt/extSdCard/expyriment")) 
+    projects = find_keyword_files("/mnt/sdcard0/expyriment") # TODO not yet checked on Android
+    projects.update(find_keyword_files("/mnt/sdcard0/expyriment"))
+    projects.update(find_keyword_files("/mnt/extSdCard/expyriment"))
+    projects.update(find_keyword_files("/mnt/extSdCard/expyriment"))
 
     pygame.font.init()
     for font in glob.glob("/system/fonts/*"):
@@ -80,7 +80,7 @@ def main():
             name = ''.join([c.lower() for c in name if c.isalnum()])
             pygame.sysfont._addfont(name, bold, italic or oblique, font,
                                     pygame.sysfont.Sysfonts)
-                                    
+
     aliases = (
         ('monospace', 'misc-fixed', 'courier', 'couriernew', 'console',
          'fixed', 'mono', 'freemono', 'bitstreamverasansmono',
