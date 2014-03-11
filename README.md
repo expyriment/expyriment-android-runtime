@@ -20,6 +20,7 @@ Altenatively, you can build the Expyriment Android Runtime yourself as describe 
 * Extract only the 'expyriment' subfolder into the 'expyriment_app' folder
 * Run `./android.py configure expyriment_app`
 * Run `./android.py build expyriment_app release`
+* The resulting apk file will be available in the bin/ directory
 
 Note 
 ----
