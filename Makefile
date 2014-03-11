@@ -11,8 +11,8 @@ configure: build/$(PGS4A).tar.bz2 build/expyriment
 	@tar xjf build/$(PGS4A).tar.bz2; mv $(PGS4A) build/$(PGS4A);
 	@cp -ra expyriment_app build/$(PGS4A)
 	@cp -ra build/expyriment build/$(PGS4A)/expyriment_app
-	@cp -ra AndroidManifest.xml build/$(PGS4A)
 	@cd build/$(PGS4A);\
+		python ./android.py installsdk;\
 		python android.py configure expyriment_app ;\
 
 
