@@ -14,7 +14,7 @@ Installation
 ------------
 The easiest way is to install the Expyriment Android Runtime on you Android device is to download and install the latest release of our [Android application package] (https://github.com/expyriment/expyriment-android-runtime/releases).
 
-Altenatively, you can build the Expyriment Android Runtime yourself as describe below:
+You can build the Expyriment Android Runtime yourself as describe below:
 
 1. Installed the JAVA JDK: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 2. Download PGS4A (version 0.94) from http://pygame.renpy.org/dl
@@ -26,6 +26,9 @@ Altenatively, you can build the Expyriment Android Runtime yourself as describe 
 8. Run `./android-sdk/tools/android` and install the API vesion 8 (Android 2.2) (you might need to install any pending updates first)
 9. Run `./android.py build expyriment_app release`
 * The resulting apk file will be available in the bin/ directory
+
+Alternative, you can use the makefile: `make configure` (step 2 to 8) and `make build` (step 9). 
+
 
 Usage
 -----

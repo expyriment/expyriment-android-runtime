@@ -14,7 +14,7 @@ configure: build/$(PGS4A).tar.bz2 build/expyriment
 	@cd build/$(PGS4A);\
 		python ./android.py installsdk;\
 		python android.py configure expyriment_app ;\
-
+		./android-sdk/tools/android
 
 build/pgs4a-%.tar.bz2:
 	@mkdir -p build
