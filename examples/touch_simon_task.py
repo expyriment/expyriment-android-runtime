@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-A experiment to assess a Simon effect with tablet PC or smartphone using
+An experiment to assess a Simon effect with tablet PCs or smartphones using
 Expyriment and Expyriment Android Runtime (EAR)
 
-
-For Simon effect see e.g.
-Simon, J. R. (1969). Reactions towards the source of stimulation. Journal of
-experimental psychology, 81, 174-176.
+For Simon effect see e.g.: Simon, J. R. (1969). Reactions towards the source
+of stimulation. Journal of experimental psychology, 81, 174-176.
 
 (c) Oliver Lindemann, 2014
 

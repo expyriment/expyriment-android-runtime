@@ -4,14 +4,14 @@
 Bisecting Judd illusion stimuli. An experiment for tablet PC or smartphone
 using Expyriment and Expyriment Android Runtime (EAR)
 
-see e.g
-Bruno N, Bernardis P, Gentilucci M (2008) Visually guided pointing,
+see e.g.: Bruno N, Bernardis P, Gentilucci M (2008) Visually guided pointing,
     the Muller-Lyer illusion, and the functional interpretation of the
     dorsal-ventral split: conclusions from 33 independent studies.
     Neurosci Biobehav Rev 32:423–437. doi:10.1016/j.neubiorev.
     2007.08.006
 
 (c) Oliver Lindemann, 2014
+
 """
 
 from expyriment import design, control, stimuli, io, misc
