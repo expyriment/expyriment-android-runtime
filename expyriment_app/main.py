@@ -20,7 +20,7 @@ def old_method():
     return projetcs
 
 def find_keyword_files(folder):
-    """find all file with keywords in folder and subfolders
+    """find all files with keywords in folder and subfolders
 
     Returns dict of files
     """
