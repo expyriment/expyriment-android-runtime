@@ -14,7 +14,7 @@ Altenatively, you can build the Expyriment Android Runtime yourself as describe 
 * Installed the JAVA JDK: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 * Download PGS4A (version 0.94) from http://pygame.renpy.org/dl
 * Run `./android.py installsdk`
-* Run `./android-sdk/tools/android` and install the API vesion 8 (Android 2.2) (you need to install the updates first)
+* Run `./android-sdk/tools/android` and install the API vesion 8 (Android 2.2) (you might need to install any pending updates first)
 * Copy the folder 'expyriment_app' inside the PGS4A folder
 * Download the latest Expyriment release (zip file) from http://www.expyriment.org/getit
 * Extract only the 'expyriment' subfolder into the 'expyriment_app' folder
