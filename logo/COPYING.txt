@@ -1,3 +1,7 @@
-The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.
+The Expyriment logo is licensed under GPL3+.
+http://www.gnu.org/licenses/gpl.txt 
 
+The Android robot is reproduced or modified from work created and shared by
+Google and used according to terms described in the Creative Commons 3.0 
+Attribution License.
 http://developer.android.com/distribute/googleplay/promote/brand.html
