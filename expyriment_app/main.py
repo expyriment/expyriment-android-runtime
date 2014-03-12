@@ -6,19 +6,6 @@ import pygame
 import expyriment
 import android
 
-def old_method():
-    projects = {}
-    for folder in glob.glob("/mnt/*"):
-        if os.path.isdir(folder):
-            for project in glob.glob(folder + "/expyriment/*"):
-                if os.path.isdir(project):
-                    path = project + "/*.py"
-                else:
-                    path = folder + "expyriment/*.py"
-                for pyfile in glob.glob(path):
-                    projects[os.path.split(pyfile)[-1]] = pyfile
-    return projetcs
-
 def find_keyword_files(folder):
     """find all files with keywords in folder and subfolders
 
@@ -37,11 +24,12 @@ def find_keyword_files(folder):
                     lines = fl.readlines()
             except:
                 lines = ""
-            cnt = 0
+            all_keywords_found = True
             for key in keywords:
-                if check_keyword(lines, key):
-                    cnt += 1
-            if cnt==len(keywords):
+                if not check_keyword(lines, key):
+                    all_keywords_found = False
+                    break
+            if all_keywords_found:
                 rtn[os.path.split(entry)[-1]] = entry
     return rtn
 
@@ -54,7 +42,6 @@ def check_keyword(lines, keyword):
 def main():
     android.init()
 
-    #projects = old_method()
     projects = find_keyword_files("/mnt/sdcard0/expyriment") # TODO not yet checked on Android
     projects.update(find_keyword_files("/mnt/sdcard0/expyriment"))
     projects.update(find_keyword_files("/mnt/extSdCard/expyriment"))
