@@ -30,14 +30,25 @@ def find_keyword_files(folder):
                     all_keywords_found = False
                     break
             if all_keywords_found:
-                rtn[os.path.split(entry)[-1]] = entry
+                rtn[os.path.split(entry)[-1][:-3]] = entry
     return rtn
 
 def check_keyword(lines, keyword):
+    """check if keyword occurs in text lines"""
     for l in lines:
         if l.find(keyword)>=0:
             return True
     return False
+
+def launch_experiment(pyfile, name):
+        expyriment.stimuli.TextScreen(heading="Starting {0}".format(name),
+                        "").present()
+        expyriment.misc.Clock().wait(1000)
+        expyriment.control.defaults.event_logging = 1
+        expyriment.control.defaults.initialize_delay = 0
+        os.chdir(os.path.split(py_file)[0])
+        sys.argv[0] = py_file
+        execfile("{0}".format(py_file), globals())
 
 def main():
     android.init()
@@ -94,25 +105,22 @@ def main():
 
     expyriment.control.defaults.event_logging = 0
     exp = expyriment.control.initialize()
-    mouse = expyriment.io.Mouse(show_cursor=False)
     if projects == {}:
         info_box = expyriment.stimuli.TextScreen("No experiments found!",
-"Please put your experiments into a folder called 'expyriment', " +
-"located on the internal or external sdcard.\n\n" +
-"[Touch the screen to exit]")
+            "Please put your experiments into a folder called 'expyriment', " +
+            "located on the internal or external SDcard.\n\n" +
+            "[Touch the screen to exit]")
         info_box.present()
-        mouse.wait_press()
+        exp.mouse.wait_press()
+    elif len(projects)==1: # started immediately  if no choice
+        launch_experiment(projects.values()[0], projects.keys()[0])
     else:
         items = projects.keys()
         items.sort()
         menu = expyriment.io.TextMenu("Run experiment:", items, 320,
-                                      scroll_menu=5, mouse=mouse)
-        py_file = projects[menu.get()]
-        expyriment.control.defaults.event_logging = 1
-        expyriment.control.defaults.initialize_delay = 0
-        os.chdir(os.path.split(py_file)[0])
-        sys.argv[0] = py_file
-        execfile("{0}".format(py_file), globals())
+                                      scroll_menu=5, mouse=exp.mouse)
+        select = menu.get()
+        launch_experiment(projects[select], select)
 
 
 if __name__ == "__main__":
