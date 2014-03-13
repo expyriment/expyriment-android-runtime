@@ -13,7 +13,8 @@ see e.g.: Bruno N, Bernardis P, Gentilucci M (2008) Visually guided pointing,
 (c) Oliver Lindemann & Florian Krause, 2014
 
 """
-## TODO: requires 0.7.0+ (plus mouse_quit_events)
+# TODO: requires 0.7.0+ (mouse_quit_events)
+# expyriment commit f197436840318e34aa02f79eb1b2fb5de79972c3 or later
 
 from expyriment import design, control, stimuli, io, misc
 from expyriment.design.randomize import rand_int

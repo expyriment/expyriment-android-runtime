@@ -41,4 +41,5 @@ nosetests.xml
 #### Expyriment specific
 examples/data/
 examples/events/
+examples/expyriment/
 _build/

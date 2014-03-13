@@ -1,20 +1,20 @@
-Expyriment Android Runtime (EAR)
-================================
-
-The **Expyriment Android Runtime** (EAR) is a convinient way to run experiments created with [*Expyriment*] (http://www.expyriment.org) on an Android device. *Expyriment* is an open-source and platform-independent lightweight Python library for designing and conducting behavioral experiments: https://github.com/expyriment/expyriment
-
+Expyriment Android Runtime
+==========================
 
 *GNU General Public License v3*
 
 Florian Krause (florian@expyriment.org) & Oliver Lindemann (oliver@expyriment.org)
 
+About
+-----
+The Expyriment Android Runtime is a convinient way to run experiments created with [Expyriment] (http://www.expyriment.org) on an Android device.
 
 
 Installation
 ------------
-The easiest way is to install EAR on you Android device is to download and install the latest release of our [Android application package] (https://github.com/expyriment/expyriment-android-runtime/releases).
+The easiest way is to install the Expyriment Android Runtime on you Android device is to download and install the latest release of our [Android application package] (https://github.com/expyriment/expyriment-android-runtime/releases).
 
-You can build EAR yourself as describe below:
+You can build the Expyriment Android Runtime yourself as describe below:
 
 1. Installed the JAVA JDK: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 2. Download PGS4A (version 0.94) from http://pygame.renpy.org/dl
@@ -42,3 +42,8 @@ Once installed, the application will look for Expyriment scripts (each in its ow
 
 /mnt/extSdCard/expyriment/exp4/exp4.py
 ```
+
+Note 
+----
+**Expyriment** is an open-source and platform-independent lightweight Python
+library for designing and conducting behavioral experiments: http://www.expyriment.org, https://github.com/expyriment/expyriment
