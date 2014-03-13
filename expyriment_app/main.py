@@ -51,13 +51,8 @@ def launch_experiment(pyfile, name):
         execfile("{0}".format(py_file), globals())
 
 def main():
+    # init android and fonts
     android.init()
-
-    projects = find_keyword_files("/mnt/sdcard0/expyriment") # TODO not yet checked on Android
-    projects.update(find_keyword_files("/mnt/sdcard0/expyriment"))
-    projects.update(find_keyword_files("/mnt/extSdCard/expyriment"))
-    projects.update(find_keyword_files("/mnt/extSdCard/expyriment"))
-
     pygame.font.init()
     for font in glob.glob("/system/fonts/*"):
         if font[-4:].lower() in ['.ttf', '.ttc']:
@@ -78,7 +73,6 @@ def main():
             name = ''.join([c.lower() for c in name if c.isalnum()])
             pygame.sysfont._addfont(name, bold, italic or oblique, font,
                                     pygame.sysfont.Sysfonts)
-
     aliases = (
         ('monospace', 'misc-fixed', 'courier', 'couriernew', 'console',
          'fixed', 'mono', 'freemono', 'bitstreamverasansmono',
@@ -103,8 +97,29 @@ def main():
             if name not in pygame.sysfont.Sysfonts:
                 pygame.sysfont.Sysalias[name] = found
 
+    # init expyriment
     expyriment.control.defaults.event_logging = 0
     exp = expyriment.control.initialize()
+    # present Android logo
+    canvas = stimuli.Canvas((600, 300), colour=(0, 0, 0))
+    logo = stimuli.Picture("expyriment_logo_android.png", position=(0, 100))
+    logo.scale((0.7, 0.7))
+    logo.plot(canvas)
+    stimuli.TextLine("Expyriment Version {0}".format(expyriment.get_version()),
+                    text_size=14, text_colour=misc.constants.C_EXPYRIMENT_ORANGE,
+                    background_colour=(0, 0, 0), position=(0, 40)).plot(canvas)
+    stimuli.TextLine("[Touch the screen...]",
+                    text_size=14, text_colour=misc.constants.C_EXPYRIMENT_ORANGE,
+                    background_colour=(0, 0, 0), position=(0, 0)).plot(canvas)
+    canvas.present()
+    exp.mouse.wait_press()
+
+    # find projects and launch
+    projects = {}
+    for folder in glob.glob("/mnt/*"):
+        if os.path.isdir(folder):
+            projects.update(find_keyword_files(folder + "/expyriment")
+
     if projects == {}:
         info_box = expyriment.stimuli.TextScreen("No experiments found!",
             "Please put your experiments into a folder called 'expyriment', " +
@@ -121,7 +136,6 @@ def main():
                                       scroll_menu=5, mouse=exp.mouse)
         select = menu.get()
         launch_experiment(projects[select], select)
-
 
 if __name__ == "__main__":
     main()
