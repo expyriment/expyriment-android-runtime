@@ -9,7 +9,7 @@ import android
 
 def main():
     android.init()
-    
+
     projects = {}
     for folder in glob.glob("/mnt/*"):
         if os.path.isdir(folder):
@@ -41,7 +41,7 @@ def main():
             name = ''.join([c.lower() for c in name if c.isalnum()])
             pygame.sysfont._addfont(name, bold, italic or oblique, font,
                                     pygame.sysfont.Sysfonts)
-                                    
+
     aliases = (
         ('monospace', 'misc-fixed', 'courier', 'couriernew', 'console',
          'fixed', 'mono', 'freemono', 'bitstreamverasansmono',
