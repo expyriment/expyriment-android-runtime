@@ -53,10 +53,10 @@ def launch_experiment(pyfile, name):
 def main():
     android.init()
 
-    projects = find_keyword_files("/mnt/sdcard0/expyriment") # TODO not yet checked on Android
-    projects.update(find_keyword_files("/mnt/sdcard0/expyriment"))
-    projects.update(find_keyword_files("/mnt/extSdCard/expyriment"))
-    projects.update(find_keyword_files("/mnt/extSdCard/expyriment"))
+    projects = {}
+    for folder in glob.glob("/mnt/*"):
+        if os.path.isdir(folder):
+            projects.update(find_keyword_files(folder + "/expyriment")
 
     pygame.font.init()
     for font in glob.glob("/system/fonts/*"):
