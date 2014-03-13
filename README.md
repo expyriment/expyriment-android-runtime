@@ -32,13 +32,9 @@ Alternative, you can use the makefile: `make configure` (step 2 to 8) and `make 
 
 Usage
 -----
-Once installed, the application will look for Expyriment scripts (each in its own subdirectory) in a directory called ‘expyriment’, located at the root level of either storage device under ‘mnt’ (i.e. the internal or external SD card). Examples of correctly located Expyriment scripts include:
-```
-/mnt/sdcard0/expyriment/exp1/exp1.py
+Once installed, the application will look for any Expyriment script in a directory called ‘expyriment’ or its subdirectories, located at the root level of either storage device under ‘mnt’ (i.e. the internal or external SD card). E.g.: 
+`/mnt/sdcard0/expyriment/`, `/mnt/extSdCard/expyriment/`. 
 
-/mnt/sdcard0/expyriment/exp2/exp2.py
-
-/mnt/extSdCard/expyriment/exp3/exp3.py
-
-/mnt/extSdCard/expyriment/exp4/exp4.py
-```
+An Expyriment script must contain the following keyword strings: `expyriment`, 
+`initialize(`, `start(` and end with the suffix `.py`. Files names starting with
+an underscore (`_`) will be ignored.
