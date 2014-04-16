@@ -32,7 +32,7 @@ Alternative, you can use the makefile: `make configure` (step 2 to 8) and `make 
 
 Usage
 -----
-Once installed, the application will look for any Expyriment script in a directory called ‘expyriment’ or its subdirectories, located at the root level of either storage device under ‘mnt’ (i.e. the internal or external SD card). E.g.: 
+The application will look for any Expyriment script in a directory called ‘expyriment’ or its subdirectories, located at the root level of either storage device under ‘mnt’ (i.e. the internal or external SD card). E.g.: 
 `/mnt/sdcard0/expyriment/`, `/mnt/extSdCard/expyriment/`. 
 
 An Expyriment script must contain the following keyword strings: `expyriment`, 
