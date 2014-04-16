@@ -36,5 +36,5 @@ Once installed, the application will look for any Expyriment script in a directo
 `/mnt/sdcard0/expyriment/`, `/mnt/extSdCard/expyriment/`. 
 
 An Expyriment script must contain the following keyword strings: `expyriment`, 
-`initialize(`, `start(` and end with the suffix `.py`. Files names starting with
+`initialize(`, `start(`. The filename has to end with the suffix `.py`. Filenames starting with
 an underscore (`_`) will be ignored.
