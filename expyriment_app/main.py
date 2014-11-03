@@ -12,7 +12,7 @@ def find_keyword_files(folder):
     Returns dict of files
     """
 
-    keywords = ["expyriment", "start(", "initialize("]
+    keywords = ["expyriment", "initialize("]
     rtn = {}
     for entry in glob.glob(folder+"/*"):
         if os.path.isdir(entry):
