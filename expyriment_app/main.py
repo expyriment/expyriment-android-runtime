@@ -1,6 +1,7 @@
 import sys
 import os
 import glob
+from importlib import import_module
 
 import pygame
 import expyriment
@@ -40,15 +41,17 @@ def check_keyword(lines, keyword):
             return True
     return False
 
-def launch_experiment(pyfile, name):
+def launch_experiment(script, name):
         expyriment.stimuli.TextScreen(heading="Starting {0}".format(name),
                         "").present()
         expyriment.misc.Clock().wait(1000)
         expyriment.control.defaults.event_logging = 1
         expyriment.control.defaults.initialize_delay = 0
-        os.chdir(os.path.split(py_file)[0])
-        sys.argv[0] = py_file
-        execfile("{0}".format(py_file), globals())
+        script = os.path.abspath(script)
+        path, pyfile = os.path.split(script)
+        os.chdir(path)
+        sys.argv[0] = pyfile
+        import_module(os.path.splitext(pyfile)[0])
 
 def main():
     android.init()
