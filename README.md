@@ -7,7 +7,7 @@ Florian Krause (florian@expyriment.org) & Oliver Lindemann (oliver@expyriment.or
 
 About
 -----
-The Expyriment Android Runtime is a convinient way to run experiments created with [Expyriment] (http://www.expyriment.org) on an Android device.
+The Expyriment Android Runtime is a convenient way to run experiments created with [Expyriment] (http://www.expyriment.org) on an Android device.
 
 
 Installation
