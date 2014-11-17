@@ -50,7 +50,7 @@ def launch_experiment(script, name):
         script = os.path.abspath(script)
         path, pyfile = os.path.split(script)
         os.chdir(path)
-        sys.argv[0] = pyfile
+        sys.argv[0] = script
         sys.path.insert(1, path)
         import_module(os.path.splitext(pyfile)[0])
 
