@@ -60,7 +60,7 @@ def main():
     projects = {}
     for folder in glob.glob("/mnt/*"):
         if os.path.isdir(folder):
-            projects.update(find_keyword_files(folder + "/expyriment")
+            projects.update(find_keyword_files(folder + "/expyriment"))
 
     pygame.font.init()
     for font in glob.glob("/system/fonts/*"):
