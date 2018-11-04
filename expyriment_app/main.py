@@ -43,7 +43,7 @@ def check_keyword(lines, keyword):
 
 def launch_experiment(script, name):
         expyriment.stimuli.TextScreen(heading="Starting {0}".format(name),
-                        "").present()
+                        text="").present()
         expyriment.misc.Clock().wait(1000)
         expyriment.control.defaults.event_logging = 1
         expyriment.control.defaults.initialize_delay = 0
